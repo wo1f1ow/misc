@@ -1,6 +1,6 @@
-# AWS IP Check Script
+# Misc
 
-This Python script checks if subdomains resolve to AWS IP addresses. It fetches the current AWS IP ranges and performs DNS lookups on provided subdomains to determine if they are hosted on AWS infrastructure.
+Collection of scripts to help with AWS dangling DNS records.
 
 ## Features
 
@@ -8,19 +8,21 @@ This Python script checks if subdomains resolve to AWS IP addresses. It fetches 
 - Performs DNS lookups on subdomains
 - Identifies if resolved IPs are within AWS ranges
 - Provides AWS region information for matching IPs
+- Tries to brute-force allocate elastic IP on target IP.
 
 ## Requirements
 
 - Python 3.6+
 - `requests` library
 - `dnspython` library
+- `boto3`library
 
 ## Installation
 
 1. Clone this repository or download the script.
 2. Install the required libraries:
    ```
-   pip3 install requests dnspython
+   pip3 install requests dnspython boto3
    ```
 
 ## Usage
@@ -31,7 +33,7 @@ This Python script checks if subdomains resolve to AWS IP addresses. It fetches 
    subdomain.example.com
    ```
 
-2. Run the script:
+2. Run the IP check script:
    ```
    python3 aws_ip_check.py subdomains.txt
    ```
